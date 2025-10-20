@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto de Venta - ÑAWIRIKCHAY STUDIO</title>
+    <!-- Importación de la nueva fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <img src="https://i.ibb.co/pvv0WvSm/awirikchay-studio-1.png" alt="Logo" class="logo">
+            <h1>Punto de Venta</h1>
+        </header>
+
+        <div class="pos-grid">
+            <!-- Columna Izquierda: Ingreso de items y datos del cliente -->
+            <div class="left-panel">
+                <div class="card">
+                    <h2>Agregar Item</h2>
+                    <form id="add-item-form" class="item-form">
+                        <div class="form-group">
+                            <label for="item-description">Descripción del Servicio / Producto</label>
+                            <input type="text" id="item-description" placeholder="Ej: Sesión de fotos, Diseño de logo..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-price">Precio ($)</label>
+                            <input type="number" id="item-price" min="0" step="0.01" placeholder="Ej: 50.00" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <h2>Datos del Cliente</h2>
+                    <form id="customer-form" class="customer-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cliente-cedula">Cédula / RUC</label>
+                                <input type="text" id="cliente-cedula" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cliente-razonSocial">Razón Social / Nombres</label>
+                                <input type="text" id="cliente-razonSocial" required>
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label for="cliente-correo">Correo Electrónico</label>
+                            <input type="email" id="cliente-correo" required>
+                        </div>
+                         <div class="form-group">
+                            <label for="cliente-direccion">Dirección</label>
+                            <input type="text" id="cliente-direccion">
+                        </div>
+                         <div class="form-group">
+                            <label for="cliente-telefono">Teléfono</label>
+                            <input type="tel" id="cliente-telefono">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Carrito y Totales -->
+            <div class="right-panel">
+                <div class="card cart-card">
+                    <h2>Carrito de Compra</h2>
+                    <div id="cart-items" class="cart-items-container">
+                        <!-- Los items del carrito se insertarán aquí -->
+                        <p class="cart-empty-message">El carrito está vacío</p>
+                    </div>
+                    <div class="totals">
+                        <div class="total-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="total-row grand-total">
+                            <span>TOTAL:</span>
+                            <span id="total">$0.00</span>
+                        </div>
+                    </div>
+                    <button id="btn-facturar" class="btn btn-success btn-block">Finalizar y Facturar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para notificaciones -->
+    <div id="modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 id="modal-title">Título</h3>
+            <p id="modal-message">Mensaje</p>
+            <button id="modal-close" class="btn btn-primary">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
